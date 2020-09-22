@@ -1,0 +1,5 @@
+.env
+.next
+*.log
+node_modules/
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
