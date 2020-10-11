@@ -34,6 +34,17 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --frozen-lockfile
       - run: yarn test
+  lint:
+    needs: yarn-install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ${{ needs.yarn-install.outputs.cache-dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
   build:
     needs: yarn-install
     runs-on: ubuntu-latest
