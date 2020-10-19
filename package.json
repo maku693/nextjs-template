@@ -43,6 +43,7 @@
     "fix": "run-s fix:*",
     "fix:js": "eslint --ext .js,.jsx,.ts,.tsx --fix .",
     "fix:css": "stylelint --fix **/*.scss",
+    "format": "prettier --write",
     "lint": "run-s lint:*",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:css": "stylelint **/*.scss",
